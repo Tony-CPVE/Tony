@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>2da página: Mi primera página web con JavaScript</title>
+    <link rel="stylesheet" href="estilo.css">
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f7f7f7;
+        color: #333;
+        padding: 20px;
+      }
+
+      h1, h2 {
+        color: #0044cc; /* Título en azul */
+      }
+
+      a {
+        color: #ff6600; /* Enlaces de color naranja */
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+        color: #ff3300; /* Color de enlace cuando se pasa el ratón */
+      }
+
+      #demo1, #demo2, #demo3 {
+        width: 70%;
+        height: 150px;
+        color: white;
+        text-align: center;
+        line-height: 150px;
+        margin: 10px auto;
+        font-size: 18px;
+        border-radius: 10px;
+      }
+      #demo1 {
+        background-color: rgb(119, 135, 155);
+      }
+      #demo2 {
+        background-color: rgb(123, 123, 123);
+      }
+      #demo3 {
+        background-color: rgb(119, 5, 155);
+      }
+
+      #result {
+        margin-top: 20px;
+        padding: 15px;
+        background-color: #ffffff;
+        border: 2px solid #ff6600; /* Borde color naranja */
+        border-radius: 5px;
+        font-size: 18px;
+        color: #333;
+      }
+
+      /* Botones personalizados */
+      button {
+        background-color: #ff6600; /* Color de fondo naranja */
+        color: white;
+        font-size: 16px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 20px;
+      }
+      button:hover {
+        background-color: #ff3300; /* Cambia de color al pasar el ratón */
+      }
+      
+      /* Estilo para las preguntas */
+      .questions {
+        background-color: #e6f7ff;
+        padding: 20px;
+        border-radius: 5px;
+        margin-top: 20px;
+        border: 1px solid #b3d9ff;
+      }
+    </style>
+  </head>
+  <body>
+    <h2><a href="index.html">ENLACE A WEB 1</a></h2>
+    <h2><a href="index2.html">ENLACE A WEB 2</a></h2>
+    <h1>Mi primera página web con JavaScript</h1>
+
+    <h3 id="demo1">Encabezado usando estilo 1</h3>
+    <h3 id="demo2">Encabezado usando estilo 2</h3>
+    <h3 id="demo3">Encabezado usando estilo 3</h3>
+
+    <div id="result"></div> <!-- Contenedor para los resultados -->
+
+    <script>
+      // Solicitar datos al usuario
+      const nombre = prompt("Introduce tu nombre");
+      const numero = prompt("Introduce un número");
+      const numero2 = prompt("Introduce otro número");
+      const edad = prompt("Introduce tu edad");
+
+      // Preguntas adicionales
+      const peliculaFavorita = prompt("¿Cuál es tu película favorita?");
+      const comidaFavorita = prompt("¿Cuál es tu comida favorita?");
+      const pasatiempo = prompt("¿Qué pasatiempo te gusta más?");
+      
+      // Validación básica para asegurar que los números sean válidos
+      if (isNaN(numero) || isNaN(numero2)) {
+        alert("Por favor, ingresa números válidos.");
+      } else if (nombre === "" || edad === "") {
+        alert("Por favor, ingresa todos los campos.");
+      } else {
+        // Mostrar los resultados dentro del div "result"
+        const resultContent = `
+          <strong>El nombre que has introducido es:</strong> ${nombre} <br>
+          <strong>El resultado de tus dos números sumados es:</strong> ${Number(numero) + Number(numero2)} <br>
+          <strong>Tu edad es:</strong> ${edad} <br><br>
+          <strong>Preguntas adicionales:</strong><br>
+          <strong>Tu película favorita es:</strong> ${peliculaFavorita} <br>
+          <strong>Tu comida favorita es:</strong> ${comidaFavorita} <br>
+          <strong>Tu pasatiempo preferido es:</strong> ${pasatiempo}
+        `;
+        
+        // Incluir el contenido en el div con id="result"
+        document.getElementById("result").innerHTML = resultContent;
+      }
+    </script>
+  </body>
+</html>
