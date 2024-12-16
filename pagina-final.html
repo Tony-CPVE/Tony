@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Página Web con JavaScript, Citas y Declaraciones</title>
+ 
+  <style>
+  
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif; /* Fuente cómic */
+      background-color: #fdf7e0; /* Fondo amarillo claro */
+      color: #2c3e50; /* Color de texto oscuro */
+      padding: 20px;
+    }
+
+    h1, h2 {
+      color: #0044cc; /* Azul para los títulos principales */
+    }
+
+    a {
+      color: #ff6600; /* Naranja para enlaces */
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: #ff3300; /* Naranja más oscuro al pasar el mouse */
+    }
+
+ 
+    .quote {
+      font-style: italic;
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #8e44ad; /* Color morado brillante para las citas */
+    }
+
+ 
+    .declaration {
+      font-weight: bold;
+      font-size: 20px;
+      color: #e74c3c; /* Rojo brillante para las declaraciones */
+    }
+
+  
+    footer {
+      text-align: center;
+      font-size: 14px;
+      margin-top: 20px;
+      color: #95a5a6;
+    }
+
+   
+    #result {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #ffffff;
+      border: 2px solid #ff6600; /* Borde color naranja */
+      border-radius: 5px;
+      font-size: 18px;
+      color: #333;
+    }
+
+  
+    button {
+      background-color: #ff6600;
+      color: white;
+      font-size: 16px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background-color: #ff3300; /* Rojo al pasar el ratón */
+    }
+
+    
+    h2 {
+      color: #2ecc71; /* Verde brillante para los títulos */
+      font-size: 24px;
+    }
+
+   
+    nav a {
+      text-decoration: none;
+      color: #3498db;
+      font-size: 18px;
+      margin-right: 20px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+      color: #2c3e50;
+    }
+
+   
+    .questions {
+      background-color: #e6f7ff;
+      padding: 20px;
+      border-radius: 5px;
+      margin-top: 20px;
+      border: 1px solid #b3d9ff;
+    }
+
+  
+    #demo1, #demo2, #demo3 {
+      width: 70%;
+      height: 150px;
+      color: white;
+      text-align: center;
+      line-height: 150px;
+      margin: 10px auto;
+      font-size: 18px;
+      border-radius: 10px;
+    }
+
+    #demo1 {
+      background-color: rgb(119, 135, 155);
+    }
+
+    #demo2 {
+      background-color: rgb(123, 123, 123);
+    }
+
+    #demo3 {
+      background-color: rgb(119, 5, 155);
+    }
+  </style>
+</head>
+<body>
+
+
+  <nav>
+    <h2><a href="index.html">ENLACE A WEB 1</a></h2>
+    <h2><a href="index2.html">ENLACE A WEB 2</a></h2>
+  </nav>
+
+  <h1>Mi primera página web con JavaScript</h1>
+
+  <!-- Sección de citas famosas -->
+  <section>
+    <h2>Citas Famosas de Dibujos Animados</h2>
+    <p class="quote">
+      "¡Yo soy el rey del mundo!"<br>- Simba (El Rey León)
+    </p>
+    <p class="quote">
+      "¡Hazlo o no lo hagas, pero no lo intentes!"<br>- Yoda (Star Wars: The Clone Wars)
+    </p>
+  </section>
+
+
+  <section>
+    <h2>Declaraciones Famosas de Dibujos Animados</h2>
+    <p class="declaration">
+      "¡Ay caramba!"<br>- Bart Simpson (Los Simpson)
+    </p>
+    <p class="declaration">
+      "¡Scooby-Dooby-Doo, ¿dónde estás?"<br>- Shaggy (Scooby-Doo)
+    </p>
+  </section>
+
+
+  <h3 id="demo1">Encabezado usando estilo 1</h3>
+  <h3 id="demo2">Encabezado usando estilo 2</h3>
+  <h3 id="demo3">Encabezado usando estilo 3</h3>
+
+
+  <div id="result"></div>
+
+  <!-- Sección para preguntas adicionales -->
+  <div class="questions">
+    <h3>¡Vamos a conocerte un poco más!</h3>
+    <p>Responde a las siguientes preguntas para ver los resultados:</p>
+  </div>
+
+
+  <button onclick="getUserData()">Generar Resultados</button>
+
+
+  <script>
+    function getUserData() {
+      // Solicitar datos al usuario
+      const nombre = prompt("Introduce tu nombre");
+      const numero = prompt("Introduce un número");
+      const numero2 = prompt("Introduce otro número");
+      const edad = prompt("Introduce tu edad");
+
+      // Preguntas adicionales
+      const peliculaFavorita = prompt("¿Cuál es tu película favorita?");
+      const comidaFavorita = prompt("¿Cuál es tu comida favorita?");
+      const pasatiempo = prompt("¿Qué pasatiempo te gusta más?");
+
+      // Validación básica para asegurar que los números sean válidos
+      if (isNaN(numero) || isNaN(numero2)) {
+        alert("Por favor, ingresa números válidos.");
+      } else if (nombre === "" || edad === "") {
+        alert("Por favor, ingresa todos los campos.");
+      } else {
+        // Mostrar los resultados dentro del div "result"
+        const resultContent = `
+          <strong>El nombre que has introducido es:</strong> ${nombre} <br>
+          <strong>El resultado de tus dos números sumados es:</strong> ${Number(numero) + Number(numero2)} <br>
+          <strong>Tu edad es:</strong> ${edad} <br><br>
+          <strong>Preguntas adicionales:</strong><br>
+          <strong>Tu película favorita es:</strong> ${peliculaFavorita} <br>
+          <strong>Tu comida favorita es:</strong> ${comidaFavorita} <br>
+          <strong>Tu pasatiempo preferido es:</strong> ${pasatiempo}
+        `;
+        document.getElementById("result").innerHTML = resultContent;
+      }
+    }
+  </script>
+
+
+  <footer>
+    <p>&copy; 2024 - Dibujos Animados para Todos</p>
+  </footer>
+
+</body>
+</html>
