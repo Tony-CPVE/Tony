@@ -1,0 +1,30 @@
+<html>
+    <body>
+        <h1>Mi quinta Web</h1>
+    <script>
+
+      var mes = prompt ("¿que mes es? ");
+      mes = Number(mes);
+    if (mes < 4)
+    {
+      document.write("el invierno esta aqui");
+      }
+        else  {
+        if( mes < 7)
+           {
+             document.write("la primavera ha llegado");
+        }
+        else
+              if(mes < 10 )
+        {
+               document.write("Verano del mar");
+        }
+        else
+              if(  mes < 13)
+        {
+               document.write("otoño del terror");
+        }
+    }
+    </script>
+    </body>
+</html>
