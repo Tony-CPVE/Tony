@@ -13,17 +13,16 @@ var numero = prompt ("Escribe un numero del 1 al 100");
   while ( numero < 1 || numero > 100 ) {
    var numero = prompt ("ERROR, APRENDE A LEER: Escribe un numero del 1 al 100");
   }
-  else
-  {
-    document.write("Vamos a aprender a sumar todos los  numeros entre el numero 1 y el numero introducido por teclado:");
-    document.write(numero);
+  
+ document.write("Vamos a aprender a sumar todos los  numeros entre el numero 1 y el numero introducido por teclado:");
+ document.write(numero);
         for ( i = 1 ; i <= numero; i++)
         {
           suma= suma+i;
           document.write("<br>");
           document.write(suma);
         }
-  }
+ 
 </script>
   
 </body>
