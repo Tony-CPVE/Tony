@@ -8,3 +8,4 @@
             numero = Number (numero); // Convertimos el texto a numero
             }
             document.write ("<br>");
+
